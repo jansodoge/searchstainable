@@ -1,0 +1,43 @@
+-The basic idea of searchstainble is to create a search engine which ranks plattforms with more sustainable consumption goods
+on a greater level. Therefore, here I try to first document all the ideas brought up during the hackathon to come up with an
+algorithm that tackles that task
+
+-Basic idea: The basic idea is to crawl a number of webshops and conduct text analysis of e.g. keywords/tags that can be used 
+to indicate the sustainability value. 
+Here are the basic ideas:
+-Evaulate products: To evaluate the specific quality of a e.g. tshirt we can apply specific attributes such as e.g. resources 
+(e.g. cotton), the location the shirt is produced in (Made in...) or further parameters and additional values such as
+if the shirt is vegan, recycled, bio. As these attributes are generated for a certain project there are two options to deal with
+a) first idea we came up with is to use these variables as factors to generate a "sustainability score" to rank products
+b) the idea we followed with is to cluster products by the cominbation of these attributes we generated two generate a number
+of types we can than rank by their "sustainability" (until now, this is a part where we need to do this by hand). 
+
+
+(1)-->If these product are rated, we can also generate a score for the plattform that is based on the "sustainability quality" of 
+the products they offer. By doing so, we can adjust a first initial value to quantify the "sustainability of a plattform"
+
+Further ideas to evaluate sustainability of a plattform:
+a) We can look out for tags in the websites text that indicate whether these are sustainable or non-sustainable businesses. 
+Until now this is thought of to analyze similiar tags betweeen websites to identify clusters of websites/plattforms 
+where plattforms that share rather identical tags are bounded stronger via an edge. Thereby, we can maybe recognize clusters
+of good/bad plattforms and then analyze the position of certain plattforms within their respective cluster to 
+further investigate their position. The resulted metric in (1) can be used to recognize which cluster is good or bad. Here, it
+is decisive to investigate if and how clusters appear by the means of which tags. 
+
+b) by investigating a) we can also see which tags are tags that are shared by the top-notch sustainable plattforms or 
+dead-evil plattforms. Thereby, we can build up a social-network structures with two types of nodes: tags and plattforms. 
+Here, one could investigate were plattforms are placed and connected to different tags (where, we do know which tag indicates
+what kind of sustainable-quality by the analysis we did in a)). Then, we can think about a metric that analysis this position
+in the network (indeed, with the metric beeing between 0 and 100). 
+
+_______
+Finally, we now end off in the best case with two values that measure the sustainability of the product and the plattform. 
+Take both, together and booom. 
+
+______
+Further ideas not included in the description yet:
+-Natural language processing
+-Topic modelling
+-machine learning approaches at later stages
+
+
